@@ -1,15 +1,15 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+/angular-poke/dist
+/angular-poke/tmp
+/angular-poke/out-tsc
+/angular-poke/bazel-out
 
 # Node
-/node_modules
-npm-debug.log
-yarn-error.log
+/angular-poke/node_modules
+/angular-poke/npm-debug.log
+/angular-poke/yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -29,13 +29,13 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+/angular-poke/.angular/cache
 .sass-cache/
-/connect.lock
-/coverage
+/angular-poke/connect.lock
+/angular-poke/coverage
 /libpeerconnection.log
 testem.log
-/typings
+/angular-poke/typings
 
 # System files
 .DS_Store
