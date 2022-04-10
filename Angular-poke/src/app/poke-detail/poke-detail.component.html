@@ -1,0 +1,52 @@
+<div *ngIf="pokemon" class="poke-frame">
+    <table>
+        <th colspan="3">
+            {{pokemon.name | uppercase}} Details
+        </th>
+        <tbody>
+            <tr>
+                
+                <td colspan="2" >    <img src="{{pokemon.image}}"></td>
+
+            </tr>
+                
+            <tr>
+                Pokedex No.
+                <td>
+                    {{pokemon.id}}
+                </td>
+            </tr>
+            <tr >
+                Type
+                <td>
+                    <div class="{{pokemon.primaryType}}">{{pokemon.primaryType}}</div>
+                    <div class="{{pokemon.secondaryType}}">{{pokemon.secondaryType}}</div>
+                </td>
+            </tr>
+            <tr>
+                Moves
+                <td>
+                    {{pokemon.moves}}
+                </td>
+            </tr>
+            <tr>
+                Abilities
+                <td>
+                    N/A
+                </td>
+            </tr>
+            <tr>
+                Favorite food
+                <td>
+                    N/A
+                </td>
+            </tr>
+            <tr>
+                Weight
+                <td>
+                    N/A
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

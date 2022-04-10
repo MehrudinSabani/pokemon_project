@@ -1,0 +1,208 @@
+<table>
+
+    <td>
+        Pokedex Nr.
+    </td>
+    <td>
+        Name
+    </td>
+    <td>
+        
+    </td>
+    <td>
+        Type
+    </td>
+    
+    <tbody *ngFor = "let pokemon of pokemon">
+        <td >
+            {{pokemon.id}}          
+        </td>
+        <td>
+            {{pokemon.name}}
+        </td>
+        <td>
+            <img src="{{pokemon.image}}">
+            
+        </td>
+        <td>
+            {{pokemon.primaryType +"/"+ pokemon.secondaryType}}
+        </td>
+        <td>
+
+<!-- Edit pokemon modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editpokemonmodal">
+    Edit
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="editpokemonmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit the selected pokemon Name here</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form >
+            <div class="poke-frame">
+                <table>
+                    <tbody>
+
+                        <tr>
+                            Pokedex No.
+                            <td>
+                                    <input placeholder="Pokedex No."/>
+                            </td>
+                        </tr>
+                        <tr>
+                            Type
+                            <!-- Later this will be a predefined dropdown list -->
+                            <td>
+                                <input placeholder="Type"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            Moves
+                            <td>
+                                <input placeholder="Moves"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            Abilities
+                            <td>
+                                <input placeholder="Abilities"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            Favorite food
+                            <td>
+                                <input placeholder="Favorite food"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            Weight
+                            <td>
+                                <input placeholder="Weight in kg"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+            <!-- Remove pokemon modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removepokemonmodal">
+    Remove
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="removepokemonmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">This will remove the selected pokemon from the database</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure you want to delete pokemon {{deletePoke?.name}} ?</p>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+               <button (click)="onDeletePoke(deletePoke.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+              </div>
+         </div>
+      </div>
+    </div>
+  </div>
+        </td>
+</tbody>
+
+    <!-- Add pokemon modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPokemonModal">
+    Add
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="addPokemonModal" tabindex="-1" role="dialog" aria-labelledby="addPokemonModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addPokemonModalLabel">Add a new Pokemon to the Pokedex</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #addForm="ngForm"(ngSubmit) = "onAddPoke(addForm)">
+            <div class="poke-frame">
+                <table>
+                    <tbody>
+
+                        <tr>
+                            Pokemon Name
+                            <td>
+                                <input type="text" ngModel name="name" placeholder="Pokemon Name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            Pokemon Image
+                            <td>
+                                <input type="text" ngModel name="image" placeholder="link for pokemon image"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            Pokemon Types
+                            <td>
+                              <select  name="types"  ngModel name="primaryType">
+                                <option type="text"  *ngFor="let type of types" value="{{type.type}}" >{{type.type}}</option>
+                              </select>
+                              <select  name="types"  ngModel name="secondaryType">
+                                <option type="text"  *ngFor="let type of types" value="{{type.type}}" >{{type.type}}</option>
+                              </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <!-- Later this will be a predefined dropdown list -->
+
+                            Pokemon Moves
+                            <td>
+                                <input type="text" ngModel name="moves" placeholder="Pokemon Moves"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            Pokemon pokedex nr
+                            <td>
+                                <input type="text" ngModel name="pokedexNr" placeholder="Pokemon Nr"/>
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            
+            
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="add-pokemon-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Save changes</button>
+              </div>   
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</table>

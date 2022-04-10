@@ -1,0 +1,14 @@
+
+<!-- pokemon is a variable, it can be any name-->
+<h2 class="title">Featured Pokemon</h2>
+<div class="poke-container">
+    <ul *ngFor = "let pokemon of pokemons" class="poke-list">
+        <li>
+        <div class="little-frame"  routerLink="/home/poke-detail/{{pokemon.id}}">
+            <img src="{{pokemon.image}}" class="poke-icon">
+            <span class="poke-name"> {{pokemon.id}} {{pokemon.name}}</span>       
+        </div>
+        </li>
+        
+    </ul>
+</div>

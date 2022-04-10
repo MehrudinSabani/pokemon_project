@@ -1,0 +1,26 @@
+table, tr, td{
+    border: 1px solid black;
+
+}
+table{
+    margin: 20px auto;
+    background-color: rgb(192, 192, 221);
+    width: 450px;
+}
+tr{
+    text-align: left;
+    padding: 4px;
+    font-size: 14pt;
+    color: white;
+    text-shadow: 1px 1px 1px rgb(1, 1, 100);
+}
+td{
+    text-align: center;
+
+}
+img{
+    max-width: 150px;
+}
+div{
+    margin: 0 auto;
+}
