@@ -1,15 +1,15 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/angular-poke/dist
-/angular-poke/tmp
-/angular-poke/out-tsc
-/angular-poke/bazel-out
+/angular-pokemonnmonn/dist
+/angular-pokemonnmonn/tmp
+/angular-pokemonnmonn/out-tsc
+/angular-pokemonnmonn/bazel-out
 
 # Node
-/angular-poke/node_modules
-/angular-poke/npm-debug.log
-/angular-poke/yarn-error.log
+angular-pokemonnmonn/node_modules
+angular-pokemonnmonn/npm-debug.log
+angular-pokemonnmonn/yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -29,13 +29,13 @@
 .history/*
 
 # Miscellaneous
-/angular-poke/.angular/cache
+/angular-pokemonnmonn/.angular/cache
 .sass-cache/
-/angular-poke/connect.lock
-/angular-poke/coverage
+/angular-pokemonnmonn/connect.lock
+/angular-pokemonnmonn/coverage
 /libpeerconnection.log
 testem.log
-/angular-poke/typings
+/angular-pokemonnmonn/typings
 
 # System files
 .DS_Store
